@@ -10,8 +10,8 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-white border-slate-200 border-2 border-b-4 active:border-b-2 hover:bg-slate-100 text-slate-500",
-        teal: "bg-cyan-500 text-primary-foreground hover:brightness-[1.05] border-cyan-600 border-b-4 active:border-b-0",
-        tealOutline:"bg-white text-cyan-500 hover:bg-slate-100",
+        teal: "bg-teal-500 text-primary-foreground hover:brightness-[1.05] border-teal-600 border-b-4 active:border-b-0",
+        tealOutline:"bg-white text-teal-500 hover:bg-slate-100",
         rose: "bg-rose-300 text-primary-foreground hover:brightness-[1.05] border-rose-400 border-b-4 active:border-b-0",
         roseOutline:"bg-white text-rose-300 hover:bg-slate-100",
         danger:"bg-rose-500 text-primary-foreground hover:brightness-[1.10] border-rose-600 border-b-4 active:border-b-0",
