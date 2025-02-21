@@ -27,7 +27,6 @@ export const SidebarItem = ({label, iconSrc, href}: Props) => {
         width={32}/>
         {label}
       </Link>
-
     </Button>
   );
 };
