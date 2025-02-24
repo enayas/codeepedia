@@ -3,6 +3,7 @@ import { Sora } from "next/font/google";
 import "./globals.css";
 import {ClerkProvider} from '@clerk/nextjs';
 import { Toaster } from "@/components/ui/sonner"
+import { ExitModal } from "@/components/modals/exit-modal";
 
 const font = Sora({
   subsets: ["latin"]
@@ -25,6 +26,7 @@ export default function RootLayout({
           className= {font.className}
         >
           <Toaster/>
+          <ExitModal />
           {children}
         </body>
       </html>
