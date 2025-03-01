@@ -1,6 +1,9 @@
 import { challenges } from "@/db/schema";
 import {cn} from "@/lib/utils";
 import Image from "next/image";
+import { useCallback } from "react";
+import {useKey} from "react-use";
+
 
 type Props = {
   id:number;
@@ -25,9 +28,16 @@ export const Card = ({
   disabled,
   type,
 }:Props ) => {
+  const handleClick = useCallback(()=> {
+    if(disabled) return;
+    onClick();
+  }, [disabled, onClick]);
+  
+  useKey(shortcut, handleClick, {}, [handleClick]);
+  
   return (
     <div
-      onClick={()=>{}}
+      onClick={handleClick}
       className={cn(
         "h-full border-2 rounded-xl border-b-4 hover:bg-black/5 p-4 lg:p-6 cursor-pointer active:border-b-2",
         selected && "border-teal-300 bg-teal-100 hover:bg-teal-100",

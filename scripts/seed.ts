@@ -94,28 +94,72 @@ const main = async () => {
         order:1,
         question: 'What data type can hold sentences?',
       },
+      {
+        id:2,
+        lessonId: 1,
+        type: "ASSIST",
+        order:2,
+        question: '"The sky is blue."',
+      },
+      {
+        id:3,
+        lessonId: 1,
+        type: "SELECT",
+        order:3,
+        question: 'Which one of these could store the values true or false?',
+      },
     ]);
     
     await db.insert(schema.challengeOptions).values([
       {
-        id: 1,
         challengeId:1,
-        imageSrc: "/string.svg",
         correct:true,
         text: "String",
       },
       {
-        id: 2,
         challengeId:1,
-        imageSrc: "/integer.svg",
         correct:false,
         text: "Integer",
       },
       {
-        id: 3,
         challengeId:1,
-        imageSrc: "/boolean.svg",
         correct:false,
+        text: "Boolean",
+      },
+    ]);
+
+    await db.insert(schema.challengeOptions).values([
+      {
+        challengeId:2,
+        correct:true,
+        text: "String",
+      },
+      {
+        challengeId:2,
+        correct:false,
+        text: "Integer",
+      },
+      {
+        challengeId:2,
+        correct:false,
+        text: "Boolean",
+      },
+    ]);
+
+    await db.insert(schema.challengeOptions).values([
+      {
+        challengeId:3,
+        correct:false,
+        text: "String",
+      },
+      {
+        challengeId:3,
+        correct:false,
+        text: "Number",
+      },
+      {
+        challengeId:3,
+        correct:true,
         text: "Boolean",
       },
     ]);
