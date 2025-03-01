@@ -3,6 +3,7 @@
 import { challengeOptions, challenges } from "@/db/schema";
 import { Percent } from "lucide-react";
 import { useState, useTransition } from "react";
+import { useWindowSize} from "react-use";
 import { Header } from "./header";
 import { QuestionBubble } from "./question-bubble";
 import { Challenge } from "./challenge";
@@ -11,6 +12,10 @@ import { upsertChallengeProgress } from "@/actions/challenge-progress";
 import { toast } from "sonner";
 import { reduceHearts } from "@/actions/user-progress";
 import { useAudio } from "react-use";
+import Image from "next/image";
+import { ResultCard } from "./result-card";
+import { useRouter } from "next/navigation";
+import Confetti from "react-confetti";
 
 type Props = {
   initialPercentage:number;
@@ -30,6 +35,9 @@ export const Quiz = ({
   initialLessonChallenges,
   userSubscription,
 }:Props) => {
+  const { width, height} = useWindowSize();
+  const router = useRouter();
+  const [finishAudio] = useAudio({src: "/finish.mp3", autoPlay:true});
   const [
     correctAudio,
     _c,
@@ -42,6 +50,7 @@ export const Quiz = ({
   ] = useAudio({src: "/incorrect.wav"});
   const [pending, startTransition] = useTransition();
 
+  const [lessonId] =  useState(initialLessonId);
   const [hearts, setHearts] = useState(initialHearts);
   const [percentage, setpercentage] = useState(initialPercentage);
   const [challenges] = useState(initialLessonChallenges);
@@ -122,6 +131,45 @@ export const Quiz = ({
     }
   };
 
+  // todo remove hardcoded true
+  if (!challenge){
+    return(
+      <>
+        {finishAudio}
+        <Confetti
+          recycle={false}
+          numberOfPieces={500}
+          tweenDuration={10000}
+          width={width}
+          height={height}
+        />
+        <div className="h-full flex flex-col gap-y-4 lg:gap-y-8 max-w-lg mx-auto text-center items-center justify-center">
+          <Image src="/finish.svg" alt="Finish" className="block lg:hidden" height={50} width={50}/>
+          <h1 className="text-xl lg:text-3xl font-build text-neutral-700">
+          Great job! <br/> You've successfully completed the lesson.
+          </h1>
+        <div className="flex items-center gap-x-4 w-full">
+          <ResultCard
+            variant="points"
+            value={challenges.length *10}
+          />
+          <ResultCard
+            variant="hearts"
+            value={hearts}
+          />
+        </div>
+        </div>
+        <div className="h-[50vh]">
+          <Footer 
+          lessonId={lessonId}
+          status="completed"
+          onCheck={()=>router.push("/learn")}
+        />
+        </div>
+        
+      </>
+    );
+  }
   
   const title = challenge.type === "ASSIST" 
     ? "Select the correct meaning" 
