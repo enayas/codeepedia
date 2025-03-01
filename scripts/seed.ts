@@ -164,6 +164,30 @@ const main = async () => {
       },
     ]);
 
+    await db.insert(schema.challenges).values([
+      {
+        id:4,
+        lessonId: 2,
+        type: "SELECT",
+        order:1,
+        question: 'What data type can hold sentences?',
+      },
+      {
+        id:5,
+        lessonId: 2,
+        type: "ASSIST",
+        order:2,
+        question: '"The sky is blue."',
+      },
+      {
+        id:6,
+        lessonId: 2,
+        type: "SELECT",
+        order:3,
+        question: 'Which one of these could store the values true or false?',
+      },
+    ]);
+
     console.log("Seeding finished");
   } catch (error) {
     console.error(error);
