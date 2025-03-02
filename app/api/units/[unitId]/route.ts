@@ -9,7 +9,7 @@ export const GET = async (req:Request, {params}:{params:{unitId:number}}) => {
     return new NextResponse("Unauthorized", {status:403});
   }
   
-  const data = await db.query.courses.findFirst({
+  const data = await db.query.units.findFirst({
     where: eq(units.id, params.unitId)
   });
   return NextResponse.json(data);

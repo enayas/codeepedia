@@ -1,7 +1,6 @@
 "use client";
 
 import { challengeOptions, challenges } from "@/db/schema";
-import { Percent } from "lucide-react";
 import { useState, useTransition } from "react";
 import { useWindowSize} from "react-use";
 import { Header } from "./header";

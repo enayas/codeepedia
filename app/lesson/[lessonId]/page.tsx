@@ -1,5 +1,4 @@
 import { getLesson, getUserProgress } from "@/db/queries";
-import { init } from "next/dist/compiled/webpack/webpack";
 import { redirect } from "next/navigation";
 import { Quiz } from "../quiz";
 

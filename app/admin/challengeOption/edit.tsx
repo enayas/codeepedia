@@ -1,4 +1,4 @@
-import {BooleanInput, Edit, NumberInput, ReferenceInput, required, SelectInput, SimpleForm, TextInput} from "react-admin";
+import {BooleanInput, Edit, NumberInput, ReferenceInput, required, SimpleForm, TextInput} from "react-admin";
 
 export const ChallengeOptionEdit = () => {
   return(
