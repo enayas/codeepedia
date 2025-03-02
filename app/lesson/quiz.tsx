@@ -10,7 +10,7 @@ import { Footer } from "./footer";
 import { upsertChallengeProgress } from "@/actions/challenge-progress";
 import { toast } from "sonner";
 import { reduceHearts } from "@/actions/user-progress";
-import { useAudio } from "react-use";
+// import { useAudio } from "react-use";
 import Image from "next/image";
 import { ResultCard } from "./result-card";
 import { useRouter } from "next/navigation";
@@ -38,17 +38,17 @@ export const Quiz = ({
   const {open: openHeartsModal} = useHeartsModal();
   const { width, height} = useWindowSize();
   const router = useRouter();
-  const [finishAudio] = useAudio({src: "/finish.mp3", autoPlay:true});
-  const [
-    correctAudio,
-    _c,
-    correctControls,
-  ] = useAudio({src: "/correct.wav"});
-  const [
-    incorrectAudio,
-    _i,
-    incorrectControls,
-  ] = useAudio({src: "/incorrect.wav"});
+  // const [finishAudio] = useAudio({src: "/finish.mp3", autoPlay:true});
+  // const [
+  //   correctAudio,
+  //   _c,
+  //   correctControls,
+  // ] = useAudio({src: "/correct.wav"});
+  // const [
+  //   incorrectAudio,
+  //   _i,
+  //   incorrectControls,
+  // ] = useAudio({src: "/incorrect.wav"});
   const [pending, startTransition] = useTransition();
 
   const [lessonId] =  useState(initialLessonId);
@@ -100,7 +100,7 @@ export const Quiz = ({
             return;
           }
 
-          correctControls.play();
+          // correctControls.play();
 
           setStatus("correct");
           setpercentage((prev)=> prev+100/challenges.length);
@@ -120,7 +120,7 @@ export const Quiz = ({
             return;
           }
 
-          incorrectControls.play();
+          // incorrectControls.play();
 
           setStatus("wrong");
 
@@ -136,7 +136,7 @@ export const Quiz = ({
   if (!challenge){
     return(
       <>
-        {finishAudio}
+        {/* {finishAudio} */}
         <Confetti
           recycle={false}
           numberOfPieces={500}
@@ -179,8 +179,8 @@ export const Quiz = ({
 
   return(
     <>
-      {incorrectAudio}
-      {correctAudio}
+      {/* {incorrectAudio}
+      {correctAudio} */}
       <Header
         hearts={hearts}
         percentage={percentage}

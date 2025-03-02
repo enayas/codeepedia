@@ -5,6 +5,7 @@ import { eq } from "drizzle-orm"
 import { NextResponse } from "next/server";
 
 export const GET = async (req:Request, {params}:{params:{challengeOptionId:number}}) => {
+
   if(!getIsAdmin()){
     return new NextResponse("Unauthorized", {status:403});
   }
