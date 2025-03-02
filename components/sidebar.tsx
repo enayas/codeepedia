@@ -29,7 +29,9 @@ export const Sidebar = ({className}:Props) => {
         href={"/quests"}
         iconSrc="/quests.png"
         />
-        <SidebarItem
+        
+        
+        {/* <SidebarItem
         label="Leaderboard"
         href={"/leaderboard"}
         iconSrc="/leaderboard.png"
@@ -38,7 +40,8 @@ export const Sidebar = ({className}:Props) => {
         label="Shop"
         href={"/shop"}
         iconSrc="/shop.png"
-        />  
+        /> */}
+        
       </div>
       <div className="p-4">
         <ClerkLoading>
