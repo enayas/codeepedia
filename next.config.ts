@@ -1,6 +1,8 @@
-import type { NextConfig } from "next";
 
-const nextConfig = {
+module.exports = {
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   async headers(){
     return[
       {
@@ -27,12 +29,4 @@ const nextConfig = {
       },
     ];
   },
-};
-
-module.exports = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
 }
-
-export default nextConfig;
