@@ -11,7 +11,7 @@ const font = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "Codepedia - Learn to Code",
+  title: "Codeepedia - Learn to Code",
   description: "Learn how to code from start to end.",
 };
 
@@ -21,6 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    
     <ClerkProvider>
       <html lang="en">
         <body
