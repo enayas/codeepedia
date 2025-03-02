@@ -25,7 +25,7 @@ type Props = {
     completed:boolean;
     challengeOptions: typeof challengeOptions.$inferSelect[];
   })[];
-  userSubscription:any; // TODO: Replace type
+  // userSubscription:any; // TODO: Replace type
 }
 
 export const Quiz = ({
@@ -33,7 +33,7 @@ export const Quiz = ({
   initialHearts,
   initialLessonId,
   initialLessonChallenges,
-  userSubscription,
+  // userSubscription,
 }:Props) => {
   const {open: openHeartsModal} = useHeartsModal();
   const { width, height} = useWindowSize();
@@ -147,7 +147,7 @@ export const Quiz = ({
         <div className="h-full flex flex-col gap-y-4 lg:gap-y-8 max-w-lg mx-auto text-center items-center justify-center">
           <Image src="/finish.svg" alt="Finish" className="block lg:hidden" height={50} width={50}/>
           <h1 className="text-xl lg:text-3xl font-build text-neutral-700">
-          Great job! <br/> You've successfully completed the lesson.
+          Great job! <br/> You&apos;ve successfully completed the lesson.
           </h1>
         <div className="flex items-center gap-x-4 w-full">
           <ResultCard
@@ -184,7 +184,7 @@ export const Quiz = ({
       <Header
         hearts={hearts}
         percentage={percentage}
-        hasActiveSubscription={!!userSubscription?.isActive}
+        hasActiveSubscription={false} // change to !!userSubscription?.isActive
       />
       <div className="flex-1">
         <div className="h-[70vh] flex items-center justify-center">
