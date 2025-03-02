@@ -5,6 +5,7 @@ import {ClerkProvider} from '@clerk/nextjs';
 import { Toaster } from "@/components/ui/sonner"
 import { ExitModal } from "@/components/modals/exit-modal";
 import { HeartsModal } from "@/components/modals/hearts-modal";
+import Script from "next/script";
 
 const font = Sora({
   subsets: ["latin"]
@@ -12,7 +13,7 @@ const font = Sora({
 
 export const metadata: Metadata = {
   title: "Codeepedia - Learn to Code",
-  description: "Learn how to code from start to end.",
+  description: "Learn how to code from start to end. It's easy, fun, and free!",
 };
 
 export default function RootLayout({
@@ -24,6 +25,23 @@ export default function RootLayout({
     
     <ClerkProvider>
       <html lang="en">
+        <head>
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=G-JF22HT3JDZ`}
+            strategy="afterInteractive"
+          />
+          <Script
+            id="google-analytics" strategy="afterInteractive"
+          >
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-JF22HT3JDZ');
+          `}
+          </Script>
+        </head>
         <body
           className= {font.className}
         >
