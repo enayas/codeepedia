@@ -4,7 +4,6 @@ import {challenges} from "@/db/schema";
 import { getIsAdmin } from "@/lib/admin";
 
 export const GET = async () => {
-  const isAdmin = getIsAdmin();
   if (!getIsAdmin()){
     return new NextResponse("Unauthorized", {status:403})
   }
