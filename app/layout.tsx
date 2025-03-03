@@ -14,6 +14,7 @@ const font = Sora({
 export const metadata: Metadata = {
   title: "Codeepedia - Learn to Code",
   description: "Learn how to code from start to end. It's easy, fun, and free!",
+  keywords: "Codeepedia, codeepedia, codepedia, Codepedia, learn to code, how to code, programming basics, learn how to program, learn programming"
 };
 
 export default function RootLayout({
