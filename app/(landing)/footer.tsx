@@ -17,10 +17,6 @@ export const Footer = () => {
           <Image src="/js.svg" alt="css" height={30} width={50}/>
           JavaScript
         </Button>
-        <Button size="xl" variant="ghost" className="w-full">
-          <Image src="/py.svg" alt="css" height={30} width={50}/>
-          Python
-        </Button>
       </div>
     </footer>
   );
