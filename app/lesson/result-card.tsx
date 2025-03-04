@@ -10,7 +10,7 @@ export const ResultCard = ({
   value,
   variant
 }:Props) => {
-  const imageSrc = variant === "hearts" ? "/heart.png" : "/points.png"
+  const imageSrc = variant === "hearts" ? "/heart.png" : "/points.svg"
   return(
     <div className={cn(
       "rounded-2xl border-2 w-full",

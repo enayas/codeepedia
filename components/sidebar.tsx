@@ -27,7 +27,7 @@ export const Sidebar = ({className}:Props) => {
         <SidebarItem
         label="Quests"
         href={"/quests"}
-        iconSrc="/quests.png"
+        iconSrc="/quests.svg"
         />
         
         
