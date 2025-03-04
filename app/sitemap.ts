@@ -18,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url:'https://codeepedia.com/lesson',
       priority: 0.4,
-    }
+    },
     {
       url:'https://codeepedia.com/quests',
       priority:0.3,
