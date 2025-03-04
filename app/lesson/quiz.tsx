@@ -173,7 +173,7 @@ export const Quiz = ({
   }
   
   const title = challenge.type === "ASSIST" 
-    ? "Select the correct meaning" 
+    ? "What will the following code result in?" 
     : challenge.question;
   
 
