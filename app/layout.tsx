@@ -14,7 +14,8 @@ const font = Sora({
 export const metadata: Metadata = {
   title: "Codeepedia - Learn to Code",
   description: "Learn how to code from start to end. It's easy, fun, and free!",
-  keywords: "Codeepedia, codeepedia, codepedia, Codepedia, learn to code, how to code, programming basics, learn how to program, learn programming"
+  keywords: "Codeepedia, codeepedia, codepedia, Codepedia, learn to code, how to code, programming basics, learn how to program, learn programming",
+  robots: "index, follow"
 };
 
 export default function RootLayout({
@@ -24,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     
-    <ClerkProvider>
+
       <html lang="en">
         <head>
           <Script
@@ -43,15 +44,20 @@ export default function RootLayout({
           `}
           </Script>
         </head>
-        <body
+
+     
+          <body
           className= {font.className}
-        >
+          >
           <Toaster/>
           <HeartsModal/>
           <ExitModal />
+          <ClerkProvider>   
           {children}
+          </ClerkProvider>
         </body>
+
       </html>
-    </ClerkProvider>
+
   );
 }
